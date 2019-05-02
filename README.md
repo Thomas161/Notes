@@ -81,9 +81,83 @@ myFunc('Hello '); //output: Hello Raj
 ```
 #
 Module Pattern
-In JavaScript, the word “modules” refers to small units of independent, reusable code
+In JavaScript, the word “modules” refers to small units of independent, reusable codeJavaScript module export as the value rather than define a type, as JavaScript JavaScript module can export an object
 #
 
+```python
+var myModule = (function() {
+    'use strict';
+ 
+    var _privateProperty = 'Hello World';
+     
+    function _privateMethod() {
+        console.log(_privateProperty);
+    }
+     
+    return {
+        publicMethod: function() {
+            _privateMethod();
+        }
+    };
+}());
+  
+myModule.publicMethod();                    // outputs 'Hello World'   
+console.log(myModule._privateProperty);     // is undefined 
+```
+export default myModule;
+import myModule from ‘./myModule’;
+
+Benefits:
+maintainability
+reusability
+Namespacing
+
+#
+Hoisting
+#
+```python
+console.log(Hoist);
+var Hoist = ’The variable Has been hoisted’;
+//output : undefined//
+```
+Javascript only hoists declarations not initalization
+
+#
+Scope
+#
+GLOBAL
+```python
+var greeting='Welcome to blog';
+(function(){
+  console.log(greeting); //Output: Welcome to blog
+})();
+```
+LOCAL
+```python
+
+(function(){
+  var greeting = 'Welcome to blog';
+  console.log(greeting); //Output: Welcome to blog
+})();
+console.log(greeting); //Output:Reference-Error greeting not defined
+```
+
+#
+Currying
+when a function, instead of taking all arguments at one time, takes the first one and return a new function that takes the second one and returns a new function which takes the third one, and so forth until all arguments have been fulfilled
+#
+
+```python
+var add =   function (a){
+                 return function(b){
+                       return function(c){
+                              return a+b+c;
+                              }        
+                        }
+                  }
+console.log(add(2)(3)(4)); //output 9
+console.log(add(3)(4)(5)); //output 12
+```
 
 
 //ERRORS IN JAVASCRIPT
