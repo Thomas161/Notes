@@ -1,8 +1,9 @@
 //CORE CONCEPTS IN JAVASCRIPT
 
-#
+##
 ES6 Class example:
-#
+
+```python
 function Bike(model,color) {
     this.model = model;
     this.color = color;
@@ -11,7 +12,7 @@ function Bike(model,color) {
 Bike.prototype.getInfo = function() {
     return this.color + ' ' + this.model+ ' bike';
 };
-
+```
 #
 Class Expression
 #
