@@ -1,8 +1,8 @@
 //CORE CONCEPTS IN JAVASCRIPT
 
-##
+#
 ES6 Class example:
-
+#
 ```python
 function Bike(model,color) {
     this.model = model;
@@ -16,6 +16,7 @@ Bike.prototype.getInfo = function() {
 #
 Class Expression
 #
+```python
 var Rectangle = class {
   constructor(height, width) {
     this.height = height;
@@ -27,10 +28,11 @@ var Rectangle = class {
 }
 
 console.log(new Rectangle(5,8).area());
-
+```
 #
 Class Declaration
 #
+```python
 class Polygon {
   constructor(height, width) {
     this.area = height * width;
@@ -38,10 +40,11 @@ class Polygon {
 }
 
 console.log(new Polygon(4,3).area);
-
+```
 #
 Prototype example
 #
+```python
 function Bike(model,color){
    this.model = model,
    this.color = color,
@@ -53,16 +56,19 @@ var bikeObj1 = new Bike('BMW','BLACK');
 var bikeObj2 = new Bike('BMW','WHITE');
 console.log(bikeObj1.getDetails()); //output: BMW bike is BLACK
 console.log(bikeObj2.getDetails()); //output: BMW bike is WHITE
-
+```
 #
 Immediately Invoked Function Expression
 #
+```python
 (function ()
 {logic here})
 ();
+```
 #
 Closures
 #
+```python
 function User(name){
   var displayName = function(greeting){
    console.log(greeting+' '+name);
@@ -72,7 +78,7 @@ return displayName;
 var myFunc = User('Raj');
 myFunc('Welcome '); //Output: Welcome Raj
 myFunc('Hello '); //output: Hello Raj
-
+```
 #
 Module Pattern
 In JavaScript, the word “modules” refers to small units of independent, reusable code
