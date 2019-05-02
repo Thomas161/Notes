@@ -1,8 +1,8 @@
 //CORE CONCEPTS IN JAVASCRIPT
 
-///////////////////////
+#
 ES6 Class example:
-///////////////////////
+#
 function Bike(model,color) {
     this.model = model;
     this.color = color;
