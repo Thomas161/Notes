@@ -55,5 +55,77 @@ while null means the value is blank. Use strict equality === instead of ==
 
     Rollbar.isAwesome();
 
-   
+    /*
+TypeError: UNDEFINED IS NOT A FUNCTION EXAMPLE
+    */
+    function clearBoard() {
+        alert("Cleared");
+    }
+
+    document.addEventListener("click", function () {
+        this.clearBoard(); // what is “this” ?
+    });
+
+    //FIX 
+    var self = this;
+      document.addEventListener("click", function () {
+          self.clearBoard(); //solves above method
+      });
+
+      /*
+UNCAUGHT RANGEERROR EXAMPLE
+      */
+
+      var a = new Array(1);
+      function recurse(a) {
+          a[0] = new Array(1);
+          recurse(a[0]);
+      }
+      recurse(a);
+
+      /*
+TypeError: CANNOT READ PROPERTY LENGTH
+      */
+
+      var testArray = ["Test"];
+
+      function testFunction(testArray) {
+          for (var i = 0; i < testArray.length; i++) {
+              console.log(testArray[i]);
+          }
+      }
+
+      testFunction();
+
+   //When you declare a function with parameters, 
+   //these parameters become local ones. 
+   //This means that even if you have variables with names testArray, 
+   //parameters with the same names within a function will still be treated as local.
+
+   //2 FIXES
+   //1. remove parameters of method
+   //2. Invoke function with params,and pass it in when called
+
+   /*
+Uncaught TypeError: CANNOT SET PROPERTY
+When we try to access an undefined variable it always 
+returns undefined and we cannot get or set any property of undefined
+   */
+  var test = undefined;
+  test.value = 0;//cannot set property value on undefined
+
+  /*
+ReferenceError: EVENT IS NOT DEFINED
+  */
+
+  function testFunction(){
+var foo;
+  }
+  console.log(foo);
+
+  //fix
+  document.addEventListener("mousemove", function (event) {
+      console.log(event);
+  })
+ 
 
