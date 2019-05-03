@@ -278,5 +278,119 @@ render() {
     );
 }
 
+/*
+AUTOBINDING
+This means that they don’t automatically bind this to the instance. 
+You’ll have to explicitly use .bind(this) in the constructor:
+*/
+
+//INSIDE CONSTRUCTOR
+this.handleClick = this.handleClick.bind(this);
+
+render() {
+    // Because `this.handleClick` is bound, we can use it as an event handler.
+    return (
+        <button onClick={this.handleClick}>
+            Say hello
+      </button>
+    );
+}
+}
+
+// WARNING: this syntax is experimental!
+// Using an arrow here binds the method:
+handleClick = () => {
+    alert(this.state.message);
+}
+
+/*
+REFS
+Managing focus, text selection, or media playback.
+Triggering imperative animations.
+Integrating with third-party DOM libraries.
+
+ created using React.createRef() WITH THE ref attribute
+*/
+
+//Refs and Function Components
+//You may not use the ref attribute on function components
+
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+    }
+    render() {
+        return <div ref={this.myRef} />;
+    }
+}
+
+//below is an error ref
+
+function MyFunctionComponent() {
+    return <input />;
+}
+
+class Parent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.textInput = React.createRef();
+    }
+    render() {
+        // This will *not* work!
+        return (
+            <MyFunctionComponent ref={this.textInput} />
+        );
+    }
+}
+
+/*
+Context
+Context provides a way to share values 
+like these between components without 
+having to explicitly pass a prop through 
+every level of the tree.
+global passing data through tree
+*/
+// Context lets us pass a value deep into the component tree
+// without explicitly threading it through every component.
+// Create a context for the current theme (with "light" as the default).
+const ThemeContext = React.createContext('light');
+
+class App extends React.Component {
+    render() {
+        // Use a Provider to pass the current theme to the tree below.
+        // Any component can read it, no matter how deep it is.
+        // In this example, we're passing "dark" as the current value.
+        return (
+            <ThemeContext.Provider value="dark">
+                <Toolbar />
+            </ThemeContext.Provider>
+        );
+    }
+}
+
+// A component in the middle doesn't have to
+// pass the theme down explicitly anymore.
+function Toolbar(props) {
+    return (
+        <div>
+            <ThemedButton />
+        </div>
+    );
+}
+
+class ThemedButton extends React.Component {
+    // Assign a contextType to read the current theme context.
+    // React will find the closest theme Provider above and use its value.
+    // In this example, the current theme is "dark".
+    static contextType = ThemeContext;
+    render() {
+        return <Button theme={this.context} />;
+    }
+}
+
+
+
 
 
