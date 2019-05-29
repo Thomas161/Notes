@@ -396,6 +396,63 @@ npm i style-loader && css loader
 update webpack.config to include modules
 
 
+/*Mounting Components, updating Components*/
+
+import React, {
+    Component
+} from 'react';
+import { setInterval, clearInterval } from 'timers';
+// import Timer from './Time';
+class App extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            count: 0,
+            currentCount: 20,
+            time: new Date().toLocaleString()
+        }
+    }
+
+    // componentDidMount(){
+    //     // document.title = `You clicked my button ${this.state.count} times`;
+    //     // console.log('compDidMount');
+    //      this.interval = setInterval(this.timer.bind(this), 1000);
+    // }
+      componentDidMount(){
+        // document.title = `You clicked my button ${this.state.count} times`;
+        // console.log('compDidMount');
+         this.interval = 
+             setInterval(() =>this.timer(), 1000);
+    }
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    }
+    timer(){
+        this.setState({
+            time: new Date().toLocaleString()
+        })
+    }
+  
+    componentDidUpdate() {
+        document.title = `You clicked my button ${this.state.count} times`;
+        console.log('compDidUpdate');
+    }
+    render() {
+        const {count, time} =this.state;
+        return(
+            <div>
+            <h1> Hello World </h1>
+            <p>Time is ... {time}</p>
+            <p>Clicked me {count} times ...</p>
+            <button onClick={()=> this.setState({count: this.state.count +4})}>Click me</button>
+            {/* <Timer/> */}
+            {/* <p>This many seconds left ... {this.state.currentCount}</p> */}
+            </div>
+        );
+    }
+}
+export default App;
+
 
 
 
