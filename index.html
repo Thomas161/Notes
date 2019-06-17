@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <title>Document</title>
+
+</head>
+<body>
+   <script>
+       //Validating forms
+        function completeForm() {
+                var x = document.getElementById('name').value;
+                var y = document.getElementById('quote').value;
+            
+
+                if (x === '' || x == null) {
+                    alert('Name cant be blank');
+                    return false;
+                } else if(y.length <8) {
+                    alert('quote must be at least 8 characters long');
+                    return false;
+                }
+            }
+            //validating form with numeral values
+            function validate(){
+                var num = document.my-form.num.value;
+                if(isNaN(num)){
+                    document.getElementById('numLock').innerText = "Needs a numeric value";
+                    return false;
+                } else {
+                return true;
+                }
+            }
+
+            //declare string, create new variable using RegExp constructor passing in value we look for
+            //create new variable and invoke test() to see if boolean is true/false
+            var str ="MY fancy new shirt and boots";
+            var mat = new RegExp("cy");
+            var t = mat.test(str);
+            console.log('Does the test pass/match expression looking for in string',t);
+
+            //look for a string value
+            var str2 = "Get outta here";
+            var noob = /outta/g;
+            var ex = noob.test(str2);
+            console.log("Result === ",ex);
+            
+        </script>
+<form onsubmit="return completeForm()" method="POST">
+  Name:   <input id="name" type="text" placeholder="name" name="name" required/>
+Quote: <input id="quote" type="text" placeholder="quote" name="quote" required/>
+
+<input type="submit" value="register"/>
+</form>
+
+<br/>
+<form name="my-form" onsubmit="return validate()">
+    Number: <input id="num" type="text"><span id="numLock" required></span>
+    <input type="submit" value="submit">
+</form>
+
+ 
+</body>
+</html>
