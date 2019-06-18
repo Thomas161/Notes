@@ -60,3 +60,32 @@ var Bank = function(name,balance){
      document.getElementById('enter').addEventListener('click',enterAmount);
     </script>
 </body>
+
+##Currency Converter
+<body onload="init()">
+
+<h1>Currency Converter</h1>
+
+<div>
+  
+  <input type="text" id="AUD" size="10" value="0" onchange="auDollar()" />
+  <label for="AUD">AUS</label>
+  <br/>
+  <br/>
+  <input type="text" id="USD" size="10" value="0" onchange="usDollar()" />
+  <label for="USD"> USD </label>
+</div>
+<script>
+var aud,usd;
+function init(){
+    aud = document.getElementById("AUD");
+     usd = document.getElementById('USD');
+}  
+  function auDollar(){
+    usd.value =parseFloat(aud.value) * 0.68;
+  }
+  function usDollar(){
+    aud.value = parseFloat(usd.value)* 1.46;
+  }
+</script>
+</body>
