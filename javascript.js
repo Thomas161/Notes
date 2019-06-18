@@ -89,3 +89,14 @@ function init(){
   }
 </script>
 </body>
+
+//Time Conversions
+
+var sec = 1000;//1 second
+var min = sec*60;//1 minute
+var hour = min*60;//1 hour (minutes * 60 minutes in day/divided by total milliseconds in hour(3,600,000)
+
+console.log('Milliseconds in Seconds',sec);
+console.log('Seconds in a Minute',min);//millisecinds in a minute
+console.log('milliseconds in an hour', hour);//3,600,000
+console.log('convert milliseconds in an hour to single unit', hour/3600000);
