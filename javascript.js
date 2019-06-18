@@ -30,3 +30,33 @@ var Bank = function(name,balance){
   var p = new Bank('Pool', 60);
   console.log(p.withdraw(30));
   console.log(p.deposit(90));
+
+/*ANOTHER BANK ACCOUNT SNIPPET**/
+<body>
+    <div>
+<input type="text" id="amount" placeholder="Enter withdrawal amount">
+<button id="enter">Submit Total</button>
+
+<p id="sum"> </p>
+
+    </div>
+    
+    <script>
+    function withdrawMoney(amount){
+        var balance = 3000;
+        if(amount >= balance){
+            alert('insufficient funds');
+            return false;
+        }
+        balance = balance - amount;
+ document.getElementById('sum').innerText = `$ Total Remaining:${balance}`;
+
+    }
+
+    function enterAmount(){
+        var amount = document.getElementById('amount').value;
+        withdrawMoney(amount);
+    }
+     document.getElementById('enter').addEventListener('click',enterAmount);
+    </script>
+</body>
