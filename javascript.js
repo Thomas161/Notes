@@ -100,3 +100,16 @@ console.log('Milliseconds in Seconds',sec);
 console.log('Seconds in a Minute',min);//millisecinds in a minute
 console.log('milliseconds in an hour', hour);//3,600,000
 console.log('convert milliseconds in an hour to single unit', hour/3600000);
+
+//Set and Get Cookies
+<script>
+var x =document.cookie = 'name=Hello';
+var y = document.cookie = 'title=FoxTrot';
+
+function alertCookie(){
+  alert(x + " " + y);
+}
+</script>
+<div>
+  <button onclick="alertCookie()">Get Da Cookies</button>
+</div>
