@@ -194,3 +194,119 @@ jam.fosure('Mystery'); //kyser sosay is a Mystery
 
 var runner = {state: 'Victoria', nationality: 'Australia'};
 MyObj.prototype.fosure.call(runner, runner.nationality);
+
+
+//var -> function level
+//let -> block
+//const -> cannot be reassigned
+
+//objects
+const person12345 = {
+  name: "Lizzie",
+  //methods inside an object with/without colon :
+  walk: function() {},
+  talk() {},
+  easy() {
+    //reference to the object usiing this keyword
+    console.log(this);
+  }
+};
+//reference to object
+const willy = person12345.easy;
+console.log(willy);
+//binding this, arg passed in (person12345) binds to this keyword
+const wet = person12345.easy.bind(person12345);
+wet();
+//willy(); undefined no willy method,
+//only a variable with reference to the objcts method
+
+//person12345.easy();
+
+//arrow function
+const squid = number => (number * number) / 3;
+console.log(squid(10));
+
+//arrow function filtering an array
+let ton = [
+  { id: 1, isActive: true },
+  { id: 2, isActive: false },
+  { id: 3, isActive: false },
+  { id: 5, isActive: false }
+];
+const fitter = ton.filter(f => {
+  return f.isActive === true;
+});
+console.log(fitter);
+//arrow functions dont rebind this
+const peeps12 = {
+  talk() {
+    var self = this;
+    setTimeout(function() {
+      console.log("self reference", self);
+    }, 3000);
+  }
+};
+
+peeps12.talk(); //prints this reference timeout function after 3 secs
+const y2k = peeps12.talk.bind(peeps12);
+console.log(y2k);
+//binary search
+function serach(list, value) {
+  let start = 0;
+  let end = list.length - 1;
+  let middle = Math.floor((start + end) / 2);
+
+  while (list[middle] !== value && start < end) {
+    if (value < list[middle]) {
+      end = middle - 1;
+    } else {
+      start = middle + 1;
+    }
+    middle = Math.floor((start + end) / 2);
+  }
+  return list[middle] !== value ? -1 : middle;
+}
+let arr = [12, 13, 45, 67, 69, 89];
+console.log(serach(arr, 45)); //prints 2 index of value
+
+let red = ["Starch", "Yeast", "Hopps"];
+let tool = ["Hammer", "Nail", "PlyWood"];
+
+let teeth = red.concat(tool);
+
+console.log(teeth);
+console.log(teeth.find(f => f.startsWith("N"))); //nail
+console.log(teeth.slice(4)); //nail and plywood, index 4 and 5
+console.log(teeth.filter(fd => fd !== "Yeast")); //prints array excluding "Yeast"
+console.log("hello");
+
+/**Some Objects */
+
+var retro = {
+  type: "commodore",
+  year: 1983
+};
+console.log(retro["type"]); //object notation
+
+class Abs {
+  constructor(name, sign) {
+    this.name = name;
+    this.sign = sign;
+  }
+}
+//creating new object from object class above
+var newbie = new Abs("Roger", 007);
+
+console.log(newbie);
+
+let fred = [12, 13, 45];
+let james = [this.fred, 94, 93];
+console.log(james);
+let gerry = [99, 98, ...fred, 100, 102];
+console.log(gerry);
+
+let tits = [12, 13, 22, 18, 22, 44];
+for (var i in tits) {
+  var d = [Math.floor(Math.random() * tits.length[i])];
+}
+console.log(d);
