@@ -113,3 +113,84 @@ function alertCookie(){
 <div>
   <button onclick="alertCookie()">Get Da Cookies</button>
 </div>
+
+
+//binding objects
+//solution 1 
+const user ={
+   firstname : 'Jamie',
+  talk(){
+    alert(`Hey ${this.firstname}`);
+  }
+}
+//setTimeout(function(){user.talk();},2000);
+
+//solution 2 
+const poop = {
+  last: 'Jimmy JaBah'
+  
+}
+
+function pod(){
+  console.log(this.last);
+}
+//bind the method to the object to allow method to use this to invoke the this 
+
+const utopia = pod.bind(poop);
+console.log(utopia());
+
+//solution 3 
+const u2 = {
+  reg: '008',
+  pods: function(phrase){
+    console.log(`${phrase} +++++ ${this.reg}`)
+  }
+}
+ let sayHi =u2.pods.bind(u2);
+ console.log(sayHi('Penelope'));
+ 
+ 
+ //solution 4 
+ const ties = {
+   fat(){
+     console.log('Ties that bind');
+   },
+   cat(){
+     console.log('In the hat');
+   }
+ }
+ for(var key in ties){
+   if(typeof ties[key] === 'function'){
+     ties[key] =ties[key].bind(ties);
+   }
+    
+ console.log(ties[key]);
+ }
+ 
+ //confusing
+ function right(){
+   console.log(this);
+ }
+ 
+ const reggie = {
+   g: right.bind(null)
+ }
+ 
+reggie.g();
+
+//implicit binding using prototype
+
+var MyObj = function(){
+  this.name = 'kyser sosay';
+}
+MyObj.prototype.fosure = function(action){
+  console.log(this.name + " is a " + action);
+}
+var jam = new MyObj();
+jam.fosure('Mystery'); //kyser sosay is a Mystery
+
+
+//explicit calling (Using object above)
+
+var runner = {state: 'Victoria', nationality: 'Australia'};
+MyObj.prototype.fosure.call(runner, runner.nationality);
