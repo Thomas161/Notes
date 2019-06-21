@@ -64,3 +64,215 @@ Quote: <input id="quote" type="text" placeholder="quote" name="quote" required/>
  
 </body>
 </html>
+
+
+<html>
+
+<head>
+    <title>Title</title>
+<script type="text/javascript" src="founder.js"></script>
+</head>
+<body>
+    <h1>hi</h1>
+
+    <!-- //CRUD OPERATIONS
+ <script>
+ var names = ["Tom", "Mike", "Sarah", "Nathan", "Ben"];
+ console.log(names);
+ //CREATE
+ Array.prototype.create = function(name) { this.push(name); };
+//READ
+  Array.prototype.read
+= function() { this.forEach(function(name, index) { 
+    console.log(name, index); }); };
+     console.log(names.read());
+//UPDATED
+     Array.prototype.update = function(name, updatedName){
+         if(name === null || name === ''){
+             return;
+         }
+         else {
+             var updatedNames = [];
+             for(var i =0; i < this.length; i++){
+                 if(this[i]=== name){
+                     updatedNames[i] = updatedName;
+                     console.log('Position ' + i + 'was updated to ' + updatedName);
+                 }
+                 else {
+                     updatedNames.push(this[i]);
+                 }
+             }
+             return updatedNames;
+         }
+     }
+     console.log(names.update('Nathan', 'Nate'));
+
+     //REMOVE
+     Array.prototype.remove = function(name){
+         var updatedNames = [];
+         for(var i= 0; i < this.length; i++){
+             if(this[i] === name){
+                 continue;
+             }
+             else {
+                 updatedNames.push(this[i]);
+             }
+           
+         }
+           return updatedNames;
+     }
+     console.log(names.remove('Ben'));
+
+
+</script>  -->
+<script>
+    var myArr = ["Orange", "Banana", "Mango", "Kiwi"];
+    console.log(myArr.indexOf('Banana'));//returns 1
+    console.log(myArr.pop());//removes last index of array and returns to console
+    console.log(myArr.sort());//alphabetically sorts array
+
+    const add = [16,17,18,19,21];
+
+    var ableToDrink = add.filter(drink => drink > 18);
+    console.log(ableToDrink);
+
+
+//    // fibonacci numbers
+//     var a,b,temp;
+
+//     for(a=0, b=1; a <20; a=temp, a=b ){
+
+
+//          temp = a+b; // temp= 0+1 (first iteration) temp is 1
+//          b++;
+//          console.log(temp);
+
+
+//     }
+
+//     function fibonacci(nums){
+//         var a =1, b=0, temp;
+
+//         while(nums >=0){
+//             //value of variable a==1 assigned to temp(default zero)
+//             temp = a;
+//             //sum of variable a and b ( 1+0) are assigned to a
+//             a= a+b;
+//             //temp variable assigned to b (temp = 1, b = 0)
+//             b=temp;
+//             //decrement the value passed in
+//             nums--;
+//         }
+//         //we return b
+//         return b;
+//         // console.log(b);
+//     }
+
+//    console.log( fibonacci(20));
+//     //0+1+1+2+3+5+8+13
+
+//fibonacci sequence working
+
+fib = function(numMax){
+    var temp;
+    for(var i=0, j=1, k=0; k <numMax; i=j, j=temp, k++){
+        temp = i+j;
+    
+    console.log(temp);
+    }
+}
+fib(20);
+
+//reduce method
+const numbers = [100,22,64];
+const adder = numbers.reduce((acc,current) =>(acc*current));
+console.log(adder);//adds up contents of array, sum total
+
+//some method
+const random = ['Red','Green','Blue'];
+const g = random.some((e => e === 'Greek'));
+console.log(g);//returns true, searches array and looks for matching condition
+
+
+//object.keys method
+
+const weather = {
+    dallas: 'cloudy',
+    santafe: 'sunny',
+    LA: 'storms'
+}
+const conditions = Object.keys(weather);
+console.log(conditions); // dallas santaFe LA
+
+
+
+
+//object.entries (key/value pairs)
+const locale = {
+    denmark: 'Copenhagen',
+    finland: 'Helsinki',
+    England: 'London'
+
+}
+const id = Object.entries(locale);
+console.log(id);//{denmark: 'Copenhagen, ... } entire key and value pairs of object locale
+
+
+//function rest
+//accepts any number of arguments as an array, regardless of data type
+function displayArgs(...args){
+    console.log(args);
+}
+displayArgs(21,'henry',09.77, 'P');
+
+   
+//Object.freeze (prevents property of object being changed)
+
+const deer = {
+    animal: 'fox'
+}
+Object.freeze(deer);
+deer.animal = 'Whale';
+console.log(deer);//object propertied frozen, cannot be changed
+
+//Object.seal() prevents new properties being added to object
+
+const dan = {
+    name: 'Mike'
+}
+Object.seal(dan);
+dan.wears = 'coat';
+
+console.log(dan);//only propety printed, new property prevented from being created wears (sealed)
+
+
+//Object.assign() joins two objects together, spread ... operator is another way to achieve this
+const first = {
+    name: 'Joe'
+}
+const last = {
+    lastName: 'Hung'
+}
+
+const d = Object.assign(first,last);
+console.log(d);
+
+
+    //reverses a array
+    var red = ['Dange','Avoid', 'Precarious'];
+    for(var i = red.length-1; i >= 0; i--){
+        console.log(red[i]);
+    }
+    //reverses a string
+    var mandy = 'Cosmos';
+    for(var j = mandy.length-1; j >= 0; j--){
+        console.log(mandy[j]);
+    }
+    
+    var ed = [...myArr, 'Peaches'];
+    console.log(ed);
+    console.log(myArr);
+</script>
+</body>
+
+</html>
