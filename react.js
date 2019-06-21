@@ -453,6 +453,13 @@ class App extends Component {
 }
 export default App;
 
+//Plugin/Preset files are not allowed to export objects (error)
 
+//step 1
+npm uninstall --save babel-loader babel/core
+//step 2
+npm install --save-dev babel-loader@^7
+
+should solve the error
 
 
