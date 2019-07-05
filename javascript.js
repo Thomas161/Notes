@@ -378,4 +378,52 @@ q.splice(1,2,'Jimmy','Kenny');
  
 }
 
+//AWESOME CSS EFFECTS
+<h2>Hover Effects</h2>
+<div class="b">One</div>
+<br/>
+<div class="c">Two</div>
+<br/>
+<div class="d">Three</div>
 
+//CSS FILE THAT EFFECTS THE INDIVIDUAL DIV ELEMENTS
+.b {
+ width: 100px;
+  height: 80px;
+  background: red;
+  -webkit-transition-property: width; /* Safari */
+  -webkit-transition-duration: 5s; /* Safari */
+  -webkit-transition-delay: 2s; /* Safari */
+  transition-property: width;
+  transition-duration: 3s;
+  transition-delay: 0.2s;
+}
+.c {
+ width: 100px;
+  height: 80px;
+  background: green;
+  -webkit-transition-property: width; /* Safari */
+  -webkit-transition-duration: 5s; /* Safari */
+  -webkit-transition-delay: 2s; /* Safari */
+  transition-property: width;
+  transition-duration: 3s;
+  transition-delay: 0.2s;
+}
+.d {
+ width: 100px;
+  height: 80px;
+  background: blue;
+  -webkit-transition-property: width; /* Safari */
+  -webkit-transition-duration: 5s; /* Safari */
+  -webkit-transition-delay: 2s; /* Safari */
+  transition-property: width;
+  transition-duration: 3s;
+  transition-delay: 0.2s;
+}
+div:hover{
+  width: 400px;
+}
+
+h2{
+  color: white;
+}
