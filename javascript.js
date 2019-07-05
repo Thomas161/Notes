@@ -347,6 +347,35 @@ function addItem(){
   document.getElementById('new-stuff').appendChild(node);
 }
 
+<div>
+  <ul id='new-list'>
+    
+  </ul>
+  <button onclick="pushItemsOntoList()">Add</button>
+</div>
 
+//Array methods pop/push/slice/splice to affect array
+var q = [12,13,1,4,56,32,11];
+document.getElementById('new-list').innerHTML = q;
+
+function pushItemsOntoList(){
+  //delete last item off array
+  //q.pop();
+  //add one item to last element in Array
+ // q.push('Frank');
+ //return a new array index 2 - 5 (last index is excluded)
+// q.slice(2,5);
+// for(var queen in q ){
+//   // 0 1 2 3 4 5 6
+//   console.log(queen);
+//   // 12 13 1 4 56 32 11
+//   console.log(q[queen]);
+// }
+//splice method inserts elements into Array
+//(e.g. example below returns == 12,Jimmy,Kenny, 4,56,32,11)
+q.splice(1,2,'Jimmy','Kenny');
+  document.getElementById('new-list').innerHTML=q;
+ 
+}
 
 
