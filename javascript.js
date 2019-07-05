@@ -311,7 +311,10 @@ for (var i in tits) {
 }
 console.log(d);
 
-/** Delete items from list using onclick event listener
+/**
+DELETE LIST ITEMS VIA EVENT LISTENER
+*/
+
 <div>
  <ul id="new-list">
    
@@ -329,7 +332,21 @@ var e = document.getElementById('new-list');
 e.removeChild(e.childNodes[0]);
   
 }
-*/
+
+/** ADD ITEM VIA CREATING ELEMENTS*/
+<div>
+  <ul id="new-stuff">
+  </ul>
+  <button onclick="addItem()">Add</button>
+</div>
+
+function addItem(){
+  var node = document.createElement('LI');
+  var text = document.createTextNode('Water');
+  node.appendChild(text);
+  document.getElementById('new-stuff').appendChild(node);
+}
+
 
 
 
