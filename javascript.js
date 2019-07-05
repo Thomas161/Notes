@@ -310,3 +310,26 @@ for (var i in tits) {
   var d = [Math.floor(Math.random() * tits.length[i])];
 }
 console.log(d);
+
+/** Delete items from list using onclick event listener
+<div>
+ <ul id="new-list">
+   
+   <li>One</li>
+    <li>Two</li>
+     <li>Three</li>
+      <li>Four</li>
+       <li>Five</li>
+ </ul>
+ <button class="btn btn-info" onclick="clickEv()">Delete Me</button>
+</div>
+
+function clickEv(){
+var e = document.getElementById('new-list');
+e.removeChild(e.childNodes[0]);
+  
+}
+*/
+
+
+
