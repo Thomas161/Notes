@@ -448,3 +448,13 @@ docs.forEach(btn=> {
     li.remove();
   })
 })
+
+//sort Array Example
+//ascending a-b 7,8,9,12
+//descending b-a 12,9,8,7
+
+let c = [12,9,7,8];
+c.sort((a,b)=> {
+  return b-a;
+})
+console.log(c);
