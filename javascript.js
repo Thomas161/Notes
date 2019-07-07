@@ -427,3 +427,24 @@ div:hover{
 h2{
   color: white;
 }
+
+Another Example of deleting list items via event listener
+<div>
+  <ul></ul>
+    <li>1<button class="deleteMe">Del</button></li>
+     <li>2<button class="deleteMe">Del</button></li>
+      <li>3<button class="deleteMe">Del</button></li>
+       <li>4<button class="deleteMe">Del</button></li>
+        <li>5<button class="deleteMe">Del</button></li>
+        
+  </ul>
+</div>
+
+var docs = document.querySelectorAll('.deleteMe');
+
+docs.forEach(btn=> {
+  btn.addEventListener('click',function() {
+    var li = this.parentNode;
+    li.remove();
+  })
+})
