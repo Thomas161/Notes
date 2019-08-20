@@ -1,4 +1,8 @@
 
+// this pull the name, value props out of the input element of a form,
+//then e.target says to target those props when inputting text
+ const { name, value } = e.target;
+
 //stateless components:
 //No state required, just output with styles
 //one-dimensional functionality - no overly complex calculations
