@@ -1,3 +1,50 @@
+let top = {
+  title: {
+    name: 'Jones',
+    id: {
+      callsign: 'Fox'
+ }
+ }
+ }
+ 
+ const {title:t} = top;
+ const {callsign:c} = top.title.id;
+ console.log(t);
+ console.log(c);
+
+ console.log(window.location.protocol);
+ const u = '89';
+
+ console.log(parseFloat(u));
+
+ const noob = 'jimmy';
+ console.log(noob.substr(0,3));
+ console.log(noob.toUpperCase(noob));
+
+ const num = {title: 'Plumber'};
+num.title = 'Clerk';
+
+console.log(num.title);
+
+/**Bad Mutation */
+const ar123 = ['red','green','blue'];
+ar123.filter(y=> y !=='green');
+console.log(ar123);
+/**Good Mutation */
+console.log([...ar123, 'magenta']);
+const second = [...ar123, 'purple'];
+console.log(second);//modified spreadin in first array, not mutating it
+console.log(ar123);//unchanged array
+
+const prof ={ occ: 'Soldier'};
+const pee = {...prof, occ: 'Carpenter', age: 30};//modifies one property and adds another
+console.log(pee);
+/**Lodash Library/good for deleting object properties
+ * Wont mutate object
+ */
+//const poo = _.omit(...prof,'occ');
+//console.log(poo);
+
 //decimal to binary
 
 console.log(Number(200).toString(2));
