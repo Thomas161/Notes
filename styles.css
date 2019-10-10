@@ -1,0 +1,59 @@
+.app1 {
+  border: 5px red solid;
+  border-bottom: 3px blue dotted;
+  margin: 20px;
+  background-color: #333;
+  color: #fff;
+}
+.app1 h1 {
+  font-family: tahoma;
+  font-weight: 700;
+  text-decoration: underline;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  margin-left: 10px;
+  word-spacing: 0.5em;
+}
+p {
+  line-height: 1.5em;
+  /* padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-top: 20px; */
+  /** Same as above 20px left/right/top/bottom*/
+  padding: 20px;
+}
+
+.app2 {
+  border: 6px green solid;
+  margin: 40px;
+  background-color: #808080;
+  color: #fff;
+  border-radius: 30px;
+}
+
+.app2 h1 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app3 {
+  border: 6px violet solid;
+  margin: 70px;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: green;
+}
+a:visited {
+  color: black;
+}
+.app3 ul {
+  list-style: none;
+}
+.app3 li {
+  border-bottom: dotted 2px yellow;
+}
