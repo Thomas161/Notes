@@ -1,3 +1,67 @@
+<html>
+
+<head>
+    <title>Title</title>
+<script type="text/javascript" src="founder.js"></script>
+</head>
+<body>
+    <h1>hi</h1>
+
+    //CRUD OPERATIONS
+ <script>
+ var names = ["Tom", "Mike", "Sarah", "Nathan", "Ben"];
+ console.log(names);
+ //CREATE
+ Array.prototype.create = function(name) { this.push(name); };
+//READ
+  Array.prototype.read
+= function() { this.forEach(function(name, index) { 
+    console.log(name, index); }); };
+     console.log(names.read());
+//UPDATED
+     Array.prototype.update = function(name, updatedName){
+         if(name === null || name === ''){
+             return;
+         }
+         else {
+             var updatedNames = [];
+             for(var i =0; i < this.length; i++){
+                 if(this[i]=== name){
+                     updatedNames[i] = updatedName;
+                     console.log('Position ' + i + 'was updated to ' + updatedName);
+                 }
+                 else {
+                     updatedNames.push(this[i]);
+                 }
+             }
+             return updatedNames;
+         }
+     }
+     console.log(names.update('Nathan', 'Nate'));
+     //REMOVE
+     Array.prototype.remove = function(name){
+         var updatedNames = [];
+         for(var i= 0; i < this.length; i++){
+             if(this[i] === name){
+                 continue;
+             }
+             else {
+                 updatedNames.push(this[i]);
+             }
+           
+         }
+           return updatedNames;
+     }
+     console.log(names.remove('Ben'));
+</script> 
+<script>
+    var myArr = ["Orange", "Banana", "Mango", "Kiwi"];
+    console.log(myArr);
+</script>
+</body>
+
+</html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
