@@ -1,3 +1,88 @@
+Some event listeners, ajax, jQuery
+document.getElementById('addPost').addEventListener('submit', onSubmitPosts);
+   
+   //retrieve albums
+   function getAlbums() {
+       var url = 'https://jsonplaceholder.typicode.com/users/3';
+       fetch(url)
+.then(response => response.json())
+           .then(data => document.getElementById('ps').innerHTML= JSON.stringify(data));
+
+}
+
+   //fetch a file and display contents of .txt file
+      function getFile() {
+          var fetchFile = 'sam.txt';
+          fetch(fetchFile)
+              .then(response => response.text())
+              .then(text =>  document.getElementById('ps'). innerHTML = text);
+      }
+//update users
+   function updateUsers(){
+       var url = 'https://jsonplaceholder.typicode.com/users/1';
+       fetch(url, {
+           method: 'PUT',
+           body: JSON.stringify({
+                name: 'Lenny Grant'
+           }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+
+       })
+       .then(response => response.json())
+       .then(json =>document.getElementById('ps4').innerHTML = JSON.stringify(json));
+           }
+
+           //create element, set src attribute and append to document body
+        function prevFile(){
+            var x = document.createElement('img');
+            x.setAttribute('src','Star.jpg');
+            x.setAttribute('height', '160px')
+            document.body.appendChild(x);
+        }
+
+        //displayData from json file
+        function displayData(){
+            fetch('test.json')
+            .then(res => res.json())
+            .then(data=> {
+                let output ='<h3>Users</h3>';
+                 data.forEach(function(d) {
+                     output += `
+                <ul class="list-group">
+                   <li class="list-group-item"> ID : ${d.id}</li>
+                   <li class="list-group-item">FirstName : ${d.firstName}</li>
+                   <li class="list-group-item"> LastName : ${d.lastName}</li> 
+                       </ul>
+                       `;
+                    });
+                    document.getElementById('output').innerHTML = output;
+            })
+        }
+
+        //onsubmit form which adds post to api
+
+        function onSubmitPosts(e){
+            e.preventDefault();
+
+            let title = document.getElementById('title').value;
+            let body = document.getElementById('body').value;
+
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+              method: 'POST',
+              headers: {
+                  'Accept': 'application/json, text/plain, */*',
+                  'Content-type': 'application/json'
+              }, 
+              body: JSON.stringify({title: title, body: body})  
+            })
+            .then(res => res.json())
+            .then(data => console.log(data));
+               
+               
+            }
+          
 let top = {
   title: {
     name: 'Jones',
